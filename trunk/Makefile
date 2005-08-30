@@ -1,6 +1,6 @@
 main:
 	chmod +x install
-	./install
+	./installer
 
 clean: uninstall
 	touch lib
