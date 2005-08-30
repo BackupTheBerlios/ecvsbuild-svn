@@ -1,5 +1,5 @@
 main:
-	chmod +x install
+	chmod +x installer
 	./installer
 
 clean: uninstall
