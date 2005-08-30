@@ -1,0 +1,252 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE moduleset SYSTEM "moduleset.dtd">
+<?xml-stylesheet type="text/xsl" href="moduleset.xsl"?>
+<moduleset>
+
+	<cvsroot name="e17.cvs.sourceforge.net"
+		root=":pserver:anonymous@cvs.sourceforge.net:/cvsroot/enlightenment"
+		password="" />
+
+	<cvsroot name="evidence.cvs.sourceforge.net"
+		root=":pserver:anonymous@cvs.sourceforge.net:/cvsroot/evidence"
+		password="" />
+		
+	<metamodule id="meta-e17-libs">
+		<dependencies>
+			<dep package="e17/libs/eet" />
+			<dep package="e17/libs/edb" />
+			<dep package="e17/libs/evas" />
+			<dep package="e17/libs/ecore" />
+			<dep package="e17/libs/embryo" />
+			<dep package="e17/libs/imlib2" />
+			<dep package="e17/libs/edje" />
+			<dep package="e17/libs/epeg" />
+			<dep package="e17/libs/epsilon" />
+			<dep package="e17/libs/esmart" />
+			<dep package="e17/libs/emotion" />
+			<dep package="e17/libs/engrave" />
+			<dep package="e17/libs/ewl" />
+			<dep package="e17/libs/etox" />
+		</dependencies>
+	</metamodule>
+
+	<cvsmodule id="e17/libs/eet" cvsroot="e17.cvs.sourceforge.net">
+		<dependencies />
+	</cvsmodule>
+
+	<cvsmodule id="e17/libs/edb" cvsroot="e17.cvs.sourceforge.net">
+		<dependencies />
+	</cvsmodule>
+
+	<cvsmodule id="e17/libs/evas" cvsroot="e17.cvs.sourceforge.net">
+		<dependencies>
+			<dep package="e17/libs/eet" />
+			<dep package="e17/libs/edb" />
+		</dependencies>
+	</cvsmodule>
+
+	<cvsmodule id="e17/libs/ecore" cvsroot="e17.cvs.sourceforge.net">
+		<dependencies>
+			<dep package="e17/libs/eet" />
+			<dep package="e17/libs/evas" />
+		</dependencies>
+	</cvsmodule>
+
+	<cvsmodule id="e17/libs/embryo" cvsroot="e17.cvs.sourceforge.net">
+		<dependencies />
+	</cvsmodule>
+
+	<cvsmodule id="e17/libs/imlib2" cvsroot="e17.cvs.sourceforge.net">
+		<dependencies />
+	</cvsmodule>
+
+	<cvsmodule id="e17/libs/edje" cvsroot="e17.cvs.sourceforge.net">
+		<dependencies>
+			<dep package="e17/libs/evas" />
+			<dep package="e17/libs/ecore" />
+			<dep package="e17/libs/eet" />
+			<dep package="e17/libs/embryo" />
+			<dep package="e17/libs/imlib2" />
+		</dependencies>
+	</cvsmodule>
+
+	<cvsmodule id="e17/libs/epeg" cvsroot="e17.cvs.sourceforge.net">
+		<dependencies />
+	</cvsmodule>
+
+	<cvsmodule id="e17/libs/epsilon" cvsroot="e17.cvs.sourceforge.net">
+		<dependencies>
+			<dep package="e17/libs/imlib2" />
+			<dep package="e17/libs/epeg" />
+			<dep package="e17/libs/evas" />
+			<dep package="e17/libs/ecore" />
+			<dep package="e17/libs/edje" />
+		</dependencies>
+	</cvsmodule>
+
+	<cvsmodule id="e17/libs/esmart" cvsroot="e17.cvs.sourceforge.net">
+		<dependencies>
+			<dep package="e17/libs/evas" />
+			<dep package="e17/libs/ecore" />
+			<dep package="e17/libs/imlib2" />
+			<dep package="e17/libs/epsilon" />
+			<dep package="e17/libs/edje" />	
+		</dependencies>
+	</cvsmodule>
+
+	<!-- needs xine to build -->
+	<cvsmodule id="e17/libs/emotion" cvsroot="e17.cvs.sourceforge.net">
+		<dependencies>
+			<dep package="e17/libs/eet" />
+			<dep package="e17/libs/evas" />
+			<dep package="e17/libs/edje" />
+			<dep package="e17/libs/ecore" />
+			<dep package="e17/libs/embryo" />
+		</dependencies>
+	</cvsmodule>
+
+	<cvsmodule id="e17/libs/engrave" cvsroot="e17.cvs.sourceforge.net">
+		<dependencies>
+			<dep package="e17/libs/evas" />
+			<dep package="e17/libs/ecore" />
+		</dependencies>
+	</cvsmodule>
+
+	<cvsmodule id="e17/libs/ewl" cvsroot="e17.cvs.sourceforge.net">
+		<dependencies>
+			<dep package="e17/libs/evas" />
+			<dep package="e17/libs/ecore" />
+			<dep package="e17/libs/edje" />
+			<dep package="e17/libs/emotion" />
+		</dependencies>
+	</cvsmodule>
+
+	<cvsmodule id="e17/libs/etox" cvsroot="e17.cvs.sourceforge.net">
+		<dependencies>
+			<dep package="e17/libs/edb" />
+			<dep package="e17/libs/evas" />
+			<dep package="e17/libs/ecore" />
+		</dependencies>
+	</cvsmodule>
+
+	<metamodule id="meta-e17-apps">
+		<dependencies>
+			<dep package="e17/apps/entice" />
+			<dep package="e17/apps/entrance" />
+			<dep package="e17/apps/eclair" />
+			<dep package="e17/apps/e" />
+			<dep package="misc/erss" />
+			<dep package="e17/apps/e_utils" />
+			<dep package="e17/apps/e_modules" />
+			<dep package="e17/apps/elicit" />
+		</dependencies>
+	</metamodule>
+
+	<cvsmodule id="e17/apps/entice" cvsroot="e17.cvs.sourceforge.net">
+		<dependencies>
+			<dep package="e17/libs/esmart" />
+			<dep package="e17/libs/evas" />
+			<dep package="e17/libs/edb" />
+			<dep package="e17/libs/ecore" />
+			<dep package="e17/libs/edje" />
+		</dependencies>
+	</cvsmodule>
+
+	<cvsmodule id="e17/apps/entrance" cvsroot="e17.cvs.sourceforge.net">
+		<dependencies>
+			<dep package="e17/libs/evas" />
+			<dep package="e17/libs/ecore" />
+			<dep package="e17/libs/edje" />
+			<dep package="e17/libs/esmart" />
+		</dependencies>
+	</cvsmodule>
+
+	<cvsmodule id="e17/apps/eclair" cvsroot="e17.cvs.sourceforge.net">
+		<dependencies>
+			<dep package="e17/libs/evas" />
+			<dep package="e17/libs/ecore" />
+			<dep package="e17/libs/edje" />
+			<dep package="e17/libs/emotion" />
+			<dep package="e17/libs/esmart" />
+		</dependencies>
+	</cvsmodule>
+
+	<cvsmodule id="e17/apps/e" cvsroot="e17.cvs.sourceforge.net">
+		<dependencies>
+			<dep package="e17/libs/evas" />
+			<dep package="e17/libs/ecore" />
+			<dep package="e17/libs/edje" />
+			<dep package="e17/libs/eet" />
+			<dep package="e17/libs/embryo" />
+		</dependencies>
+	</cvsmodule>
+
+	<cvsmodule id="misc/engage" cvsroot="e17.cvs.sourceforge.net">
+		<dependencies>
+			<dep package="e17/libs/esmart" />
+			<dep package="e17/libs/imlib2" />
+			<dep package="e17/libs/edje" />
+			<dep package="e17/libs/ecore" />
+			<dep package="e17/libs/evas" />
+			<dep package="e17/libs/ewl" />
+			<dep package="e17/apps/e" />
+			
+		</dependencies>
+	</cvsmodule>
+
+	<cvsmodule id="misc/erss" cvsroot="e17.cvs.sourceforge.net">
+		<dependencies>
+			<dep package="e17/libs/edje" />
+			<dep package="e17/libs/esmart" />
+			<dep package="e17/libs/etox" />
+		</dependencies>
+	</cvsmodule>
+
+	<cvsmodule id="e17/apps/e_utils" cvsroot="e17.cvs.sourceforge.net">
+		<dependencies>
+			<dep package="e17/libs/ecore" />
+			<dep package="e17/libs/evas" />
+			<dep package="e17/libs/esmart" />
+			<dep package="e17/libs/edje" />
+			<dep package="e17/libs/eet" />
+			<dep package="e17/libs/ewl" />
+			<dep package="e17/libs/engrave" />
+			<dep package="e17/libs/imlib2" />
+			<dep package="e17/apps/e" />
+			<dep package="e17/libs/epsilon" />
+		</dependencies>
+	</cvsmodule>
+
+	<cvsmodule id="e17/apps/e_modules" cvsroot="e17.cvs.sourceforge.net">
+		<dependencies>
+			<dep package="e17/libs/ecore" />
+			<dep package="e17/libs/evas" />
+			<dep package="e17/libs/esmart" />
+			<dep package="e17/libs/edje" />
+			<dep package="e17/libs/eet" />
+			<dep package="e17/apps/e" />
+		</dependencies>
+	</cvsmodule>
+
+	<cvsmodule id="e17/apps/elicit" cvsroot="e17.cvs.sourceforge.net">
+		<dependencies>
+			<dep package="e17/libs/esmart" />
+			<dep package="e17/libs/imlib2" />
+			<dep package="e17/libs/evas" />
+			<dep package="e17/libs/edb" />
+			<dep package="e17/libs/ecore" />
+			<dep package="e17/libs/edje" />
+		</dependencies>
+	</cvsmodule>
+	
+	<cvsmodule id="evidence" cvsroot="evidence.cvs.sourceforge.net">
+		<dependencies>
+			<dep package="e17/libs/ecore" />
+			<dep package="e17/libs/evas" />
+			<dep package="e17/libs/edb" />
+			<dep package="e17/libs/eet" />
+			<dep package="e17/libs/edje" />
+		</dependencies>
+	</cvsmodule>
+	
+</moduleset>

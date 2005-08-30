@@ -1,0 +1,19 @@
+# -*- mode: python -*-
+
+
+# modules to build (deps are also built)
+moduleset = [ 'e17-cvs' ]
+modules = [ 'meta-e17-libs', 'meta-e17-apps' ]
+
+# the prefix to install things to (user must have write access)
+prefix = os.path.expanduser('~/Applications/e')
+
+# where the sources are checked out to
+checkoutroot = os.path.expanduser('~/Applications/e/src')
+
+# where to put downloaded tarballs.
+tarballdir = os.path.join(checkoutroot, 'pkgs')
+
+os.environ['INSTALL'] = os.path.expanduser('~/bin/install-check')
+
+addpath('XDG_DATA_DIRS', '/usr/share')

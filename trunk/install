@@ -1,0 +1,291 @@
+#!/bin/bash
+
+E_DEVEL=0
+
+function installer_about {
+	
+	local choice
+	local loop=1
+
+	while test $loop = 1
+	do
+	
+		clear
+		
+		echo "ecvsbuild - Introduction"
+		echo "--"
+		echo "ecvsbuild is an Enlightenment e17 CVS build tool"
+		echo "built on jhbuild."
+
+		echo 
+		echo "c) Read copyright"
+		echo "n) Next"
+		echo "q) Quit"
+		echo 
+
+		echo -n "(c/n/q)>> "
+
+		read choice
+
+		if [ $choice = "c" ]; then
+			installer_license
+		elif [ $choice = "n" ]; then
+			if [ $E_DEVEL = "1" ]; then
+				installer_update
+			elif [ ! -d ./lib ]; then
+				installer_update
+			else
+				installer_config
+			fi
+		elif [ $choice = "q" ]; then
+			clear
+			exit
+		fi
+	
+	done
+	
+}
+
+function installer_license {
+	more COPYING
+}
+
+function installer_update {
+
+	local loop=1
+	local choice
+
+	while test $loop = 1
+	do
+	
+		clear 
+
+		echo "ecvsbuild - Update Installer"
+		echo "--"
+		echo 
+	
+		if [ -d lib ]; then
+			echo "r) Replace currently installed e_cvs_build libraries"
+		else
+			echo "r) Grab e_cvs_build libraries from cvs"
+		fi
+
+		echo "n) Next"
+		echo "q) Quit"
+		echo 
+	
+		echo -n "(r/n/q)>> "
+
+		read choice
+
+		if [ $choice = "q" ]; then
+			clear
+			exit
+		elif [ $choice = "n" ]; then
+			installer_config
+		elif [ $choice = "r" ]; then
+			
+			clear
+	
+			echo 
+			echo "When it asks for CVS password, just press 'enter'"
+			echo 
+			
+			if [ -d lib ]; then
+				rm -rf lib
+			fi
+			cvs -d :pserver:anonymous@anoncvs.gnome.org:/cvs/gnome login
+			cvs -d :pserver:anonymous@anoncvs.gnome.org:/cvs/gnome get jhbuild
+			
+			mv jhbuild lib
+			sed -e "s/.jhbuildrc/.ecvsbuildrc/g" lib/jhbuild/main.py > foo.py
+			mv foo.py lib/jhbuild/main.py
+			
+			if [ -d lib ]; then
+				cp config/e17-cvs.modules lib/modulesets
+				cp config/Makefile.ecvsbuild lib/Makefile
+				cp config/ecvsbuild.desktop lib/ecvsbuild.desktop
+				cp config/default.ecvsbuildrc lib/
+			fi
+		fi
+	done
+}
+
+
+function installer_config {
+	
+	if [ ! -f ~/.ecvsbuildrc ]; then
+		cp config/default.ecvsbuildrc ~/.ecvsbuildrc
+	fi
+
+	if [ ! -f ~/.ecvsbuildrc_config ]; then
+		echo "E_HOME=~/Applications/e" > ~/.ecvsbuildrc_config
+		echo "E_CONFIG=0" >> ~/.ecvsbuildrc_config
+	fi
+
+	local loop=1
+	local choice
+	
+	while test $loop = 1
+	do
+		clear
+
+		. ~/.ecvsbuildrc_config
+
+		echo "ecvsbuild - Base Configuration"
+		echo "--"
+		echo 
+		
+		if [ $E_CONFIG = 0 ]; then
+			echo "* ecvsbuild has NOT been configured *"
+			echo 
+			echo "d) Select $E_HOME as the base directory."
+		else
+			echo "e17 install directory: $E_HOME"
+			echo 
+			echo "n) Next"
+		fi
+		echo "*) Enter a new directory to install e17 in"
+		echo "q) Quit"
+		echo 
+
+		echo -n "(*/q)>> "
+		
+		read choice
+
+		if [ $choice = "q" ]; then
+			loop=0
+		elif [ $choice = "d" ]; then
+			if [ $E_CONFIG = 0 ]; then
+				echo "E_HOME=~/Applications/e" > ~/.ecvsbuildrc_config
+				echo "E_CONFIG=1" >> ~/.ecvsbuildrc_config
+				installer_config_write
+			fi
+		elif [ $choice = "n" ]; then
+			installer_bin
+		else
+			mkdir -p $choice
+
+			if [ ! -d $choice ]; then
+				clear 
+				echo "$choice does not exist"
+				echo "Press 'enter' to continue"
+				read foobarbin
+			else
+				echo "E_HOME=$choice" > ~/.ecvsbuildrc_config
+				echo "E_CONFIG=1" >> ~/.ecvsbuildrc_config
+			fi
+		fi
+	done
+}
+
+function installer_config_write {
+
+	. ~/.ecvsbuildrc_config
+
+	echo "# modules to build (deps are also built)" >  ~/.ecvsbuildrc
+	echo "moduleset = [ 'e17-cvs' ]" >> ~/.ecvsbuildrc
+	echo "modules = [ 'meta-e17-libs', 'meta-e17-apps' ]" >> ~/.ecvsbuildrc
+	echo "" >> ~/.ecvsbuildrc
+	echo "# the prefix to install things to (user must have write access)" >> ~/.ecvsbuildrc
+	echo "prefix = os.path.expanduser('$E_HOME')" >> ~/.ecvsbuildrc
+	echo "" >> ~/.ecvsbuildrc
+	echo "# where the sources are checked out to" >> ~/.ecvsbuildrc
+	echo "checkoutroot = os.path.expanduser('$E_HOME/src')" >> ~/.ecvsbuildrc
+	echo "" >> ~/.ecvsbuildrc
+	echo "os.environ['INSTALL'] = os.path.expanduser('~/bin/install-check')" >> ~/.ecvsbuildrc
+}
+
+function installer_bin {
+	
+	local choice
+	local loop=1
+
+	while test $loop = 1
+	do
+		if [ ! -d ~/bin ]; then
+			
+			echo "ecvsbuild - ~/bin Configuration"
+			echo "--"
+			echo 
+			
+			echo "ecvsbuild installs in ~/bin and "
+			echo "there is no ~/bin directory."
+			echo 
+			echo "c) Create ~/bin directory"
+			echo "q) Quit"
+			echo 
+			echo -n "(c/q)>> "
+
+			read choice
+
+			if [ $choice = "c" ]; then
+				mkdir ~/bin
+				loop=0
+			elif [ $choice = "q" ]; then
+				clear
+				exit
+			fi
+		else
+			loop=0
+		fi
+	done
+
+	installer_ecvsbuild
+}
+
+function installer_ecvsbuild {
+	
+	local choice
+	local loop=1
+
+	while test $loop = 1
+	do
+
+		clear
+		
+		if [ ! -f ~/bin/ecvsbuild ]; then
+			echo "ecvsbuild - ecvsbuild Configuration"
+			echo "--"
+			echo 
+
+			echo "c) Install ecvsbuild in ~/bin"
+			echo "q) Quit"
+			echo
+			echo -n "(c/q)>> "
+
+			read choice
+
+			if [ $choice = "c" ]; then
+				cd lib && make && make install
+				loop=0
+			elif [ $choice = "q" ]; then
+				clear
+				exit
+			fi
+				
+		else
+			loop=0
+		fi
+	done
+
+	installer_done
+}
+
+function installer_done {
+
+	clear
+	
+	echo "Done! Put ~/bin in your \$PATH and type in \"ecvsbuild\" "
+	echo "to build Enlightenment e17."
+	echo 
+	echo "Also - do not delete the ecvsbuild-installer directory."
+	echo "ecvsbuild uses the ecvsbuild-installer directory to build "
+	echo "Enlightenment e17."
+	echo 
+	echo "http://ecvsbuild.berlios.de"
+	echo 
+	exit
+}
+
+installer_about
