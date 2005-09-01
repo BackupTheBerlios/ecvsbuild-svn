@@ -1,4 +1,8 @@
 2005-09-01 Chris Parker <mrcsparker@users.berlios.de>
+	* Added CFLAGS and LDFLAGS to "installer" file.  Now, the installer
+	will write CFLAGS and LDFLAGS to the .ecvsbuild file.
+
+2005-09-01 Chris Parker <mrcsparker@users.berlios.de>
 	* Add copyright (GPL) to top of "installer" file
 
 2005-09-01 Chris Parker <mrcsparker@users.berlios.de>

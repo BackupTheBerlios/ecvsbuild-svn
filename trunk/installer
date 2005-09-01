@@ -214,6 +214,9 @@ function installer_config_write {
 	echo "checkoutroot = os.path.expanduser('$E_HOME/src')" >> ~/.ecvsbuildrc
 	echo "" >> ~/.ecvsbuildrc
 	echo "os.environ['INSTALL'] = os.path.expanduser('~/bin/install-check')" >> ~/.ecvsbuildrc
+	echo "" >> ~/.ecvsbuildrc
+	echo "os.environ['CFLAGS'] = '-I${E_HOME}/include'" >> ~/.ecvsbuildrc
+	echo "os.environ['LDFLAGS'] = '-L${E_HOME}/lib'" >> ~/.ecvsbuildrc
 }
 
 function installer_bin {
