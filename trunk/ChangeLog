@@ -1,3 +1,6 @@
-2005-09-01 Chris Parker <parkerc@users.berlios.de>
+2005-09-01 Chris Parker <mrcsparker@users.berlios.de>
+	* Add copyright (GPL) to top of "installer" file
+
+2005-09-01 Chris Parker <mrcsparker@users.berlios.de>
 	* Created ChangeLog
 	* Added e17genmenu to e17 moduleset
