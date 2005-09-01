@@ -17,3 +17,6 @@ tarballdir = os.path.join(checkoutroot, 'pkgs')
 os.environ['INSTALL'] = os.path.expanduser('~/bin/install-check')
 
 addpath('XDG_DATA_DIRS', '/usr/share')
+
+os.environ['CFLAGS'] = '-I/home/parkerc/Applications/e/include'
+os.environ['LDFLAGS'] = '-L/home/parkerc/Applications/e/lib'

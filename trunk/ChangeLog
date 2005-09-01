@@ -1,10 +1,10 @@
 2005-09-01 Chris Parker <mrcsparker@users.berlios.de>
 	* Added CFLAGS and LDFLAGS to "installer" file.  Now, the installer
 	will write CFLAGS and LDFLAGS to the .ecvsbuild file.
-
-2005-09-01 Chris Parker <mrcsparker@users.berlios.de>
 	* Add copyright (GPL) to top of "installer" file
-
-2005-09-01 Chris Parker <mrcsparker@users.berlios.de>
+	* Added the following to the e17 moduleset (none of these are
+	part of a metamodule so they have to be built on their own):
+	* e17genmenu
+	* evidence
+	* xine-lib (for e17/libs/emotion)
 	* Created ChangeLog
-	* Added e17genmenu to e17 moduleset
