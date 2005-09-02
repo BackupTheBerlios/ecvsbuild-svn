@@ -238,7 +238,18 @@
 			<dep package="e17/libs/edje" />
 		</dependencies>
 	</cvsmodule>
+
+	<metamodule id="meta-e17-extras">
+		<dependencies>
+			<dep package="e17genmenu" />
+		</dependencies>
+	</metamodule>
 	
+	<!-- 
+	Evidence has some crazy header-file things going on and
+	will not compile for me.  When it is cleaned up, I will
+	include it in meta-e17-extras.
+	-->
 	<cvsmodule id="evidence" cvsroot="evidence.cvs.sourceforge.net">
 		<dependencies>
 			<dep package="e17/libs/ecore" />
