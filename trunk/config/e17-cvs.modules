@@ -136,6 +136,7 @@
 			<dep package="e17/apps/eclair" />
 			<dep package="e17/apps/e" />
 			<dep package="misc/erss" />
+			<dep package="misc/engage" />
 			<dep package="e17/apps/e_utils" />
 			<dep package="e17/apps/e_modules" />
 			<dep package="e17/apps/elicit" />
@@ -238,7 +239,7 @@
 			<dep package="e17/libs/edje" />
 		</dependencies>
 	</cvsmodule>
-
+	
 	<metamodule id="meta-e17-extras">
 		<dependencies>
 			<dep package="e17genmenu" />

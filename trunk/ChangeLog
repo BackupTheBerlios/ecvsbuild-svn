@@ -1,3 +1,6 @@
+2005-09-02 Chis Parker <mrcsparker@users.berlios.de>
+	* Added misc/engage to meta-e17-apps
+
 2005-09-01 Chris Parker <mrcsparker@users.berlios.de>
 	* Added CFLAGS and LDFLAGS to "installer" file.  Now, the installer
 	will write CFLAGS and LDFLAGS to the .ecvsbuild file.
