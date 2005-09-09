@@ -262,8 +262,8 @@
 	</cvsmodule>
 
 	<tarball id="e17genmenu" version="3.0.3">
-		<source href="http://umn.dl.sourceforge.net/sourceforge/e17genmenu/e17genmenu-3.0.3.tar.gz"
-		size="314789" md5sum="aa3b4cc576eda27394e9df7c9ebb4729" />
+		<source href="http://umn.dl.sourceforge.net/sourceforge/e17genmenu/e17genmenu-4.0.0.tar.gz"
+		size="239179" md5sum="ad734b87616cddb9e390d4eaa3dcb167" />
 		<dependencies>
 			<dep package="e17/apps/e" />
 			<dep package="e17/libs/ecore" />
