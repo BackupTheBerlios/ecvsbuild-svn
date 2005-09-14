@@ -1,3 +1,12 @@
+2005-09-14 Chris Parker <mrcsparker@users.berlios.de>
+	* Added xine cvs to moduleset ("xine")
+	* Renamed xine-lib to xine-release (stable version of xine)
+	* Updated e17genmenu to 4.1.1
+
+2005-09-09 Chris Parker <mrcsparker@users.berlios.de>
+	* Created a meta-17-misc metamodule and moved all of the
+	  e17/misc/* modules into it.
+
 2005-09-08 Chris Parker <mrcsparker@users.berlios.de>
 	* Updated e17genmenu to 4.0.0
 
@@ -6,7 +15,7 @@
 
 2005-09-01 Chris Parker <mrcsparker@users.berlios.de>
 	* Added CFLAGS and LDFLAGS to "installer" file.  Now, the installer
-	will write CFLAGS and LDFLAGS to the .ecvsbuild file.
+	  will write CFLAGS and LDFLAGS to the .ecvsbuild file.
 	* Add copyright (GPL) to top of "installer" file
 	* Added the following to the e17 moduleset as meta-e17-extras:
 	* e17genmenu

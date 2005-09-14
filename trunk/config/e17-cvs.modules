@@ -128,15 +128,13 @@
 			<dep package="e17/libs/ecore" />
 		</dependencies>
 	</cvsmodule>
-
+	
 	<metamodule id="meta-e17-apps">
 		<dependencies>
 			<dep package="e17/apps/entice" />
 			<dep package="e17/apps/entrance" />
 			<dep package="e17/apps/eclair" />
 			<dep package="e17/apps/e" />
-			<dep package="misc/erss" />
-			<dep package="misc/engage" />
 			<dep package="e17/apps/e_utils" />
 			<dep package="e17/apps/e_modules" />
 			<dep package="e17/apps/elicit" />
@@ -182,27 +180,6 @@
 		</dependencies>
 	</cvsmodule>
 
-	<cvsmodule id="misc/engage" cvsroot="e17.cvs.sourceforge.net">
-		<dependencies>
-			<dep package="e17/libs/esmart" />
-			<dep package="e17/libs/imlib2" />
-			<dep package="e17/libs/edje" />
-			<dep package="e17/libs/ecore" />
-			<dep package="e17/libs/evas" />
-			<dep package="e17/libs/ewl" />
-			<dep package="e17/apps/e" />
-			
-		</dependencies>
-	</cvsmodule>
-
-	<cvsmodule id="misc/erss" cvsroot="e17.cvs.sourceforge.net">
-		<dependencies>
-			<dep package="e17/libs/edje" />
-			<dep package="e17/libs/esmart" />
-			<dep package="e17/libs/etox" />
-		</dependencies>
-	</cvsmodule>
-
 	<cvsmodule id="e17/apps/e_utils" cvsroot="e17.cvs.sourceforge.net">
 		<dependencies>
 			<dep package="e17/libs/ecore" />
@@ -239,6 +216,66 @@
 			<dep package="e17/libs/edje" />
 		</dependencies>
 	</cvsmodule>
+	<!--
+	<cvsmodule id="e17/apps/express" cvsroot="e17.cvs.sourceforge.net">
+		<dependencies>
+		</dependencies>
+	</cvsmodule>
+	
+	<cvsmodule id="e17/apps/iconbar" cvsroot="e17.cvs.sourceforge.net">
+		<dependencies>
+		</dependencies>
+	</cvsmodule>
+
+	<cvsmodule id="e17/apps/enscribe" cvsroot="e17.cvs.sourceforge.net">
+		<dependencies>
+		</dependencies>
+	</cvsmodule>
+
+	<cvsmodule id="e17/apps/examine" cvsroot="e17.cvs.sourceforge.net">
+		<dependencies>
+		</dependencies>
+	</cvsmodule>
+
+	<cvsmodule id="e17/apps/elation" cvsroot="e17.cvs.sourceforge.net">
+		<dependencies>
+		</dependencies>
+	</cvsmodule>
+
+	<cvsmodule id="e17/apps/evfs" cvsroot="e17.cvs.sourceforge.net">
+		<dependencies>
+		</dependencies>
+	</cvsmodule>
+	-->
+
+	<metamodule id="meta-e17-misc">
+		<dependencies>
+			<dep package="misc/erss" />
+			<dep package="misc/engage" />
+		</dependencies>
+	</metamodule>
+
+		<cvsmodule id="misc/engage" cvsroot="e17.cvs.sourceforge.net">
+		<dependencies>
+			<dep package="e17/libs/esmart" />
+			<dep package="e17/libs/imlib2" />
+			<dep package="e17/libs/edje" />
+			<dep package="e17/libs/ecore" />
+			<dep package="e17/libs/evas" />
+			<dep package="e17/libs/ewl" />
+			<dep package="e17/apps/e" />
+			
+		</dependencies>
+	</cvsmodule>
+
+	<cvsmodule id="misc/erss" cvsroot="e17.cvs.sourceforge.net">
+		<dependencies>
+			<dep package="e17/libs/edje" />
+			<dep package="e17/libs/esmart" />
+			<dep package="e17/libs/etox" />
+		</dependencies>
+	</cvsmodule>
+
 	
 	<metamodule id="meta-e17-extras">
 		<dependencies>
@@ -260,10 +297,10 @@
 			<dep package="e17/libs/edje" />
 		</dependencies>
 	</cvsmodule>
-
+	
 	<tarball id="e17genmenu" version="3.0.3">
-		<source href="http://umn.dl.sourceforge.net/sourceforge/e17genmenu/e17genmenu-4.0.0.tar.gz"
-		size="239179" md5sum="ad734b87616cddb9e390d4eaa3dcb167" />
+		<source href="http://umn.dl.sourceforge.net/sourceforge/e17genmenu/e17genmenu-4.1.1.tar.gz"
+		size="244579" md5sum="fe632824c57781fb6645c6cbccecb4fd" />
 		<dependencies>
 			<dep package="e17/apps/e" />
 			<dep package="e17/libs/ecore" />
@@ -272,9 +309,17 @@
 		</dependencies>
 	</tarball>
 
-	<tarball id="xine-lib" version="1.1.0">
+	<tarball id="xine-stable" version="1.1.0">
 		<source href="http://heanet.dl.sourceforge.net/sourceforge/xine/xine-lib-1.1.0.tar.gz"
 		size="8036882" md5sum="3537cfd58d253b4be20a4975e7086e38" />
 	</tarball>
+
+	<cvsroot name="xine.cvs.sourceforge.net"
+		root=":pserver:anonymous@cvs.xine.sf.net:/cvsroot/xine"
+		password="" />
+
+	<cvsmodule id="xine" cvsroot="xine.cvs.sourceforge.net">
+		<dependencies />
+	</cvsmodule>
 	
 </moduleset>
