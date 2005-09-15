@@ -1,3 +1,14 @@
+2005-09-15 Chris Parker <mrcsparker@users.berlios.de>
+	* Commented out entrance from meta build list.  Not really necessary
+	if you are going to build in your home directory.
+	* Changed xine to xine-lib and xine-release to xine-lib-stable
+	* Added e17/apps/express
+	* Added e17/apps/iconbar
+	* Added e17/apps/enscribe
+	* Added e17/apps/examine
+	* Added e17/apps/elation
+	* Added e17/apps/evfs
+
 2005-09-14 Chris Parker <mrcsparker@users.berlios.de>
 	* Added xine cvs to moduleset ("xine")
 	* Renamed xine-lib to xine-release (stable version of xine)

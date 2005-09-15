@@ -132,12 +132,18 @@
 	<metamodule id="meta-e17-apps">
 		<dependencies>
 			<dep package="e17/apps/entice" />
-			<dep package="e17/apps/entrance" />
+			<!-- <dep package="e17/apps/entrance" /> -->
 			<dep package="e17/apps/eclair" />
 			<dep package="e17/apps/e" />
 			<dep package="e17/apps/e_utils" />
 			<dep package="e17/apps/e_modules" />
 			<dep package="e17/apps/elicit" />
+			<dep package="e17/apps/express" />
+			<dep package="e17/apps/iconbar" />
+			<dep package="e17/apps/enscribe" />
+			<dep package="e17/apps/examine" />
+			<dep package="e17/apps/elation" />
+			<dep package="e17/apps/evfs" />
 		</dependencies>
 	</metamodule>
 
@@ -216,37 +222,58 @@
 			<dep package="e17/libs/edje" />
 		</dependencies>
 	</cvsmodule>
-	<!--
+	
 	<cvsmodule id="e17/apps/express" cvsroot="e17.cvs.sourceforge.net">
 		<dependencies>
+			<dep package="e17/libs/evas" />
+			<dep package="e17/libs/ecore" />
+			<dep package="e17/libs/edje" />
+			<dep package="e17/libs/esmart" />
 		</dependencies>
 	</cvsmodule>
 	
 	<cvsmodule id="e17/apps/iconbar" cvsroot="e17.cvs.sourceforge.net">
 		<dependencies>
+			<dep package="e17/libs/esmart" />
+			<dep package="e17/libs/evas" />
+			<dep package="e17/libs/edb" />
+			<dep package="e17/libs/ecore" />
+			<dep package="e17/libs/edje" />
 		</dependencies>
 	</cvsmodule>
 
 	<cvsmodule id="e17/apps/enscribe" cvsroot="e17.cvs.sourceforge.net">
 		<dependencies>
+			<dep package="e17/libs/esmart" />
+			<dep package="e17/libs/evas" />
+			<dep package="e17/libs/ecore" />
+			<dep package="e17/libs/edje" />
 		</dependencies>
 	</cvsmodule>
 
 	<cvsmodule id="e17/apps/examine" cvsroot="e17.cvs.sourceforge.net">
 		<dependencies>
+			<dep package="e17/libs/ecore" />
+			<dep package="e17/libs/ewl" />
 		</dependencies>
 	</cvsmodule>
 
 	<cvsmodule id="e17/apps/elation" cvsroot="e17.cvs.sourceforge.net">
 		<dependencies>
+			<dep package="e17/libs/eet" />
+			<dep package="e17/libs/evas" />
+			<dep package="e17/libs/edje" />
+			<dep package="e17/libs/ecore" />
+			<dep package="e17/libs/embryo" />
+			<dep package="e17/libs/emotion" />
 		</dependencies>
 	</cvsmodule>
 
 	<cvsmodule id="e17/apps/evfs" cvsroot="e17.cvs.sourceforge.net">
 		<dependencies>
+			<dep package="e17/libs/ecore" />
 		</dependencies>
 	</cvsmodule>
-	-->
 
 	<metamodule id="meta-e17-misc">
 		<dependencies>
@@ -255,7 +282,7 @@
 		</dependencies>
 	</metamodule>
 
-		<cvsmodule id="misc/engage" cvsroot="e17.cvs.sourceforge.net">
+	<cvsmodule id="misc/engage" cvsroot="e17.cvs.sourceforge.net">
 		<dependencies>
 			<dep package="e17/libs/esmart" />
 			<dep package="e17/libs/imlib2" />
@@ -309,16 +336,16 @@
 		</dependencies>
 	</tarball>
 
-	<tarball id="xine-stable" version="1.1.0">
+	<tarball id="xine-lib-stable" version="1.1.0">
 		<source href="http://heanet.dl.sourceforge.net/sourceforge/xine/xine-lib-1.1.0.tar.gz"
 		size="8036882" md5sum="3537cfd58d253b4be20a4975e7086e38" />
 	</tarball>
 
 	<cvsroot name="xine.cvs.sourceforge.net"
-		root=":pserver:anonymous@cvs.xine.sf.net:/cvsroot/xine"
+		root=":pserver:anonymous@cvs.sourceforge.net:/cvsroot/xine"
 		password="" />
 
-	<cvsmodule id="xine" cvsroot="xine.cvs.sourceforge.net">
+	<cvsmodule id="xine-lib" cvsroot="xine.cvs.sourceforge.net">
 		<dependencies />
 	</cvsmodule>
 	
