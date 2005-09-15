@@ -325,9 +325,9 @@
 		</dependencies>
 	</cvsmodule>
 	
-	<tarball id="e17genmenu" version="3.0.3">
-		<source href="http://umn.dl.sourceforge.net/sourceforge/e17genmenu/e17genmenu-4.1.1.tar.gz"
-		size="244579" md5sum="fe632824c57781fb6645c6cbccecb4fd" />
+	<tarball id="e17genmenu" version="4.1.2">
+		<source href="http://umn.dl.sourceforge.net/sourceforge/e17genmenu/e17genmenu-4.1.2.tar.gz"
+		size="244565" md5sum="8edcba29a284830352f60861b74c5ad3" />
 		<dependencies>
 			<dep package="e17/apps/e" />
 			<dep package="e17/libs/ecore" />
@@ -335,6 +335,13 @@
 			<dep package="e17/libs/engrave" />
 		</dependencies>
 	</tarball>
+
+	<metamodule id="meta-e17-deps">
+		<dependencies>
+			<dep package="xine-lib" />
+			<dep package="sqlite3" />
+		</dependencies>
+	</metamodule>
 
 	<tarball id="xine-lib-stable" version="1.1.0">
 		<source href="http://heanet.dl.sourceforge.net/sourceforge/xine/xine-lib-1.1.0.tar.gz"
@@ -348,5 +355,9 @@
 	<cvsmodule id="xine-lib" cvsroot="xine.cvs.sourceforge.net">
 		<dependencies />
 	</cvsmodule>
+
+	<tarball id="sqlite3" version="3.2.5">
+		<source href="http://www.sqlite.org/sqlite-3.2.5.tar.gz" size="1397666" md5sum="0f07cfd8591c3fcae159f0c69bf2436f" />
+	</tarball>
 	
 </moduleset>

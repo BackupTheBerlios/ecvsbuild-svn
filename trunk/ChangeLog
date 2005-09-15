@@ -8,6 +8,9 @@
 	* Added e17/apps/examine
 	* Added e17/apps/elation
 	* Added e17/apps/evfs
+	* Added sqlite3 at request of Jas-Nix on #get-e
+	* Created meta-e17-deps that builds sqlite and xine
+	*
 
 2005-09-14 Chris Parker <mrcsparker@users.berlios.de>
 	* Added xine cvs to moduleset ("xine")
