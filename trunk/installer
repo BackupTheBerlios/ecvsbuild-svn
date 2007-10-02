@@ -108,15 +108,14 @@ function installer_update {
 			clear
 	
 			echo 
-			echo "When it asks for CVS password, just press 'enter'"
+			echo "Checking out new update"
 			echo 
 			
 			if [ -d lib ]; then
 				rm -rf lib
 			fi
-			cvs -d :pserver:anonymous@anoncvs.gnome.org:/cvs/gnome login
-			cvs -d :pserver:anonymous@anoncvs.gnome.org:/cvs/gnome get jhbuild
-			
+			svn co http://svn.gnome.org/svn/jhbuild/trunk jhbuild
+
 			mv jhbuild lib
 			sed -e "s/.jhbuildrc/.ecvsbuildrc/g" lib/jhbuild/main.py > foo.py
 			mv foo.py lib/jhbuild/main.py
