@@ -4,7 +4,7 @@
 <moduleset>
 
 	<cvsroot name="e17.cvs.sourceforge.net"
-		root=":pserver:anonymous@cvs.sourceforge.net:/cvsroot/enlightenment"
+		root=":pserver:anonymous@anoncvs.enlightenment.org:/var/cvs/e"
 		password="" />
 
 	<cvsroot name="evidence.cvs.sourceforge.net"
@@ -14,11 +14,19 @@
 	<metamodule id="meta-e17-libs">
 		<dependencies>
 			<dep package="e17/libs/eet" />
+			<dep package="e17/libs/evolve" />
 			<dep package="e17/libs/edb" />
 			<dep package="e17/libs/evas" />
 			<dep package="e17/libs/ecore" />
+			<dep package="e17/libs/exml" />
+			<dep package="e17/libs/etk" />
+			<dep package="e17/libs/etk_extra" />
+			<dep package="e17/libs/etk-perl" />
+			<dep package="e17/libs/efreet" />
+			<dep package="e17/libs/enhance" />
 			<dep package="e17/libs/embryo" />
 			<dep package="e17/libs/imlib2" />
+			<dep package="e17/libs/imlib2_loaders" />
 			<dep package="e17/libs/edje" />
 			<dep package="e17/libs/epeg" />
 			<dep package="e17/libs/epsilon" />
@@ -26,7 +34,6 @@
 			<dep package="e17/libs/emotion" />
 			<dep package="e17/libs/engrave" />
 			<dep package="e17/libs/ewl" />
-			<dep package="e17/libs/etox" />
 		</dependencies>
 	</metamodule>
 
