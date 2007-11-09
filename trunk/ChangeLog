@@ -1,3 +1,6 @@
+2007-11-08 Chris Parker <mrcsparker@users.berlios.de>
+	* Updated the version to 0.2
+
 2005-09-15 Chris Parker <mrcsparker@users.berlios.de>
 	* Commented out entrance from meta build list.  Not really necessary
 	if you are going to build in your home directory.
